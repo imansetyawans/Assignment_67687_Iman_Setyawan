@@ -22,7 +22,7 @@ app = FastAPI()
 @app.get("/wisatamanca")
 def show_item():
     url = 'https://github.com/imansetyawans/Assignment_67687_Iman_Setyawan/blob/main/Copy%20of%2026.%20urusan%20pariwisata.xlsx%20-%2026.11.csv'
-    datamanca = pd.read_csv('url, index_col=0)
+    datamanca = pd.read_csv(url, index_col=0)
     wisatamanca = datamanca.loc[:, ['nama_desa_wisata', 'wisatawan_mancanegara']]
     sortwisatamanca = wisatamanca.sort_values(by='wisatawan_mancanegara', ascending = False).head()
 
