@@ -34,7 +34,9 @@ def show_item():
 
 @app.get("/wisatanusan")
 def show_item():
-    datanusan = pd.read_csv('https://github.com/imansetyawans/Assignment_67687_Iman_Setyawan/blob/main/Copy%20of%2026.%20urusan%20pariwisata.xlsx%20-%2026.11.csv')
+	
+    url = 'https://github.com/imansetyawans/Assignment_67687_Iman_Setyawan/blob/main/Copy%20of%2026.%20urusan%20pariwisata.xlsx%20-%2026.11.csv'
+    datanusan = pd.read_csv(url, index_col=0)
     wisatanusan = datanusan.loc[:, ['nama_desa_wisata', 'wisatawan_nusantara']]
     sortwisatanusan = wisatanusan.sort_values(by='wisatawan_nusantara', ascending = False).head()
 
