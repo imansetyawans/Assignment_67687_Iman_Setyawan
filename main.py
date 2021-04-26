@@ -21,8 +21,8 @@ app = FastAPI()
 
 @app.get("/wisatamanca")
 def show_item():
-    url = 'https://github.com/imansetyawans/Assignment_67687_Iman_Setyawan/blob/main/Copy%20of%2026.%20urusan%20pariwisata.xlsx%20-%2026.11.csv'
-    datamanca = pd.read_csv(url, index_col=0)
+    url = 'https://raw.githubusercontent.com/imansetyawans/Assignment_67687_Iman_Setyawan/main/pariwisatabantul.csv'
+    datamanca = pd.read_csv(url, error_bad_lines=False)
     wisatamanca = datamanca.loc[:, ['nama_desa_wisata', 'wisatawan_mancanegara']]
     sortwisatamanca = wisatamanca.sort_values(by='wisatawan_mancanegara', ascending = False).head()
 
@@ -35,8 +35,8 @@ def show_item():
 @app.get("/wisatanusan")
 def show_item():
 	
-    url = 'https://github.com/imansetyawans/Assignment_67687_Iman_Setyawan/blob/main/Copy%20of%2026.%20urusan%20pariwisata.xlsx%20-%2026.11.csv'
-    datanusan = pd.read_csv(url, index_col=0)
+    url = 'https://raw.githubusercontent.com/imansetyawans/Assignment_67687_Iman_Setyawan/main/pariwisatabantul.csv'
+    datanusan = pd.read_csv(url, error_bad_lines=False)
     wisatanusan = datanusan.loc[:, ['nama_desa_wisata', 'wisatawan_nusantara']]
     sortwisatanusan = wisatanusan.sort_values(by='wisatawan_nusantara', ascending = False).head()
 
